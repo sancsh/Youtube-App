@@ -1,9 +1,20 @@
 import React from 'react';
+import VideoListItem from './videoListItem';
 
-const videoList = function(){
+const videoList = (props)=>{
+    console.log(props);
+    const listVideos = props.videos.map(function(video){
+        return( 
+        <VideoListItem video = {video} key = {video.etag} />
+        );
+    });
+
     return(
-        <ul className = "col-md-4 list-group">
-        </ul>
+        <div>
+            <ul className = "col-md-4 list-group">
+                {listVideos}
+            </ul>
+        </div>
     );
 };
 
