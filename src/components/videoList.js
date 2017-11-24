@@ -5,7 +5,10 @@ const videoList = (props)=>{
     console.log(props);
     const listVideos = props.videos.map(function(video){
         return( 
-        <VideoListItem video = {video} key = {video.etag} />
+        <VideoListItem 
+        onVideoSelect = {props.onVideoSelect}
+        video = {video} 
+        key = {video.etag} />
         );
     });
 
